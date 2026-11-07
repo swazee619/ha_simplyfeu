@@ -11,7 +11,7 @@
           "cookie": "En-tête Cookie (facultatif)"
         },
         "data_description": {
-          "price_regex": "Seulement si le prix n'est pas détecté. Doit contenir un groupe nommé (?P<p>...), ex. class=\"price\">(?P<p>[\\d,.]+)",
+          "price_regex": "Seulement si le prix n'est pas détecté. Regex Python avec un groupe nommé p (exemple dans le README).",
           "cookie": "Si les prix dépendent de votre commune, copiez l'en-tête Cookie depuis votre navigateur après avoir choisi votre commune."
         }
       }
@@ -20,7 +20,7 @@
       "cannot_connect": "Impossible de charger la page.",
       "price_not_found": "Aucun prix trouvé sur la page. Essayez une regex personnalisée.",
       "invalid_url": "L'URL doit commencer par http:// ou https://.",
-      "invalid_regex": "Regex invalide ou groupe nommé (?P<p>...) manquant.",
+      "invalid_regex": "Regex invalide, ou groupe nommé p manquant.",
       "unknown": "Erreur inattendue."
     },
     "abort": {
@@ -41,14 +41,18 @@
     "error": {
       "cannot_connect": "Impossible de charger la page.",
       "price_not_found": "Aucun prix trouvé sur la page. Essayez une regex personnalisée.",
-      "invalid_regex": "Regex invalide ou groupe nommé (?P<p>...) manquant.",
+      "invalid_regex": "Regex invalide, ou groupe nommé p manquant.",
       "unknown": "Erreur inattendue."
     }
   },
   "entity": {
     "sensor": {
-      "price": { "name": "Prix" },
-      "lowest_price": { "name": "Prix le plus bas" }
+      "price": {
+        "name": "Prix"
+      },
+      "lowest_price": {
+        "name": "Prix le plus bas"
+      }
     }
   }
 }
