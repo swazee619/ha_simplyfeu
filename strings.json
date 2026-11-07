@@ -1,0 +1,58 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a product to track",
+        "description": "Paste the URL of the SimplyFeu product page (for example a pallet of pellets).",
+        "data": {
+          "url": "Product page URL",
+          "name": "Name (optional)",
+          "price_regex": "Custom price regex (optional)",
+          "cookie": "Cookie header (optional)"
+        },
+        "data_description": {
+          "price_regex": "Only if the price is not detected. Python regex with a named group called p (see the README for an example).",
+          "cookie": "If prices depend on your town, copy the Cookie header from your browser after selecting your town."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to load the page.",
+      "price_not_found": "No price found on the page. Try a custom regex.",
+      "invalid_url": "The URL must start with http:// or https://.",
+      "invalid_regex": "Invalid regex, or the named group p is missing.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This product is already tracked."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "SimplyFeu options",
+        "data": {
+          "scan_interval_hours": "Check interval",
+          "price_regex": "Custom price regex",
+          "cookie": "Cookie header"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to load the page.",
+      "price_not_found": "No price found on the page. Try a custom regex.",
+      "invalid_regex": "Invalid regex, or the named group p is missing.",
+      "unknown": "Unexpected error."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "price": {
+        "name": "Price"
+      },
+      "lowest_price": {
+        "name": "Lowest price"
+      }
+    }
+  }
+}
