@@ -1,0 +1,54 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ajouter un produit à suivre",
+        "description": "Collez l'URL de la page produit SimplyFeu (par exemple une palette de granulés).",
+        "data": {
+          "url": "URL de la page produit",
+          "name": "Nom (facultatif)",
+          "price_regex": "Regex de prix personnalisée (facultatif)",
+          "cookie": "En-tête Cookie (facultatif)"
+        },
+        "data_description": {
+          "price_regex": "Seulement si le prix n'est pas détecté. Doit contenir un groupe nommé (?P<p>...), ex. class=\"price\">(?P<p>[\\d,.]+)",
+          "cookie": "Si les prix dépendent de votre commune, copiez l'en-tête Cookie depuis votre navigateur après avoir choisi votre commune."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de charger la page.",
+      "price_not_found": "Aucun prix trouvé sur la page. Essayez une regex personnalisée.",
+      "invalid_url": "L'URL doit commencer par http:// ou https://.",
+      "invalid_regex": "Regex invalide ou groupe nommé (?P<p>...) manquant.",
+      "unknown": "Erreur inattendue."
+    },
+    "abort": {
+      "already_configured": "Ce produit est déjà suivi."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options SimplyFeu",
+        "data": {
+          "scan_interval_hours": "Intervalle de relevé",
+          "price_regex": "Regex de prix personnalisée",
+          "cookie": "En-tête Cookie"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de charger la page.",
+      "price_not_found": "Aucun prix trouvé sur la page. Essayez une regex personnalisée.",
+      "invalid_regex": "Regex invalide ou groupe nommé (?P<p>...) manquant.",
+      "unknown": "Erreur inattendue."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "price": { "name": "Prix" },
+      "lowest_price": { "name": "Prix le plus bas" }
+    }
+  }
+}
