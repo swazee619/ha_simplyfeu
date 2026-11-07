@@ -6,7 +6,8 @@ import asyncio
 
 import aiohttp
 
-from .parser import ProductInfo, extract_product
+from .const import LOGGER
+from .parser import PriceNotFoundError, ProductInfo, extract_product
 
 _HEADERS = {
     "User-Agent": (
@@ -57,4 +58,17 @@ class SimplyFeuClient:
         except (aiohttp.ClientError, TimeoutError) as err:
             raise SimplyFeuConnectionError(str(err)) from err
 
-        return extract_product(page, self._price_regex)
+        try:
+            return extract_product(page, self._price_regex)
+        except PriceNotFoundError:
+            LOGGER.warning(
+                "Prix introuvable sur %s : page de %d caractères, "
+                "'oe_currency_value' présent : %s, 'itemprop=\"price\"' présent : %s, "
+                "cookie envoyé : %s",
+                self._url,
+                len(page),
+                "oe_currency_value" in page,
+                'itemprop="price"' in page,
+                "Cookie" in self._headers,
+            )
+            raise

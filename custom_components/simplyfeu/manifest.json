@@ -1,12 +1,12 @@
 {
   "domain": "simplyfeu",
   "name": "SimplyFeu",
-  "codeowners": ["@VOTRE_UTILISATEUR"],
+  "codeowners": ["@swazee619"],
   "config_flow": true,
-  "documentation": "https://github.com/VOTRE_UTILISATEUR/ha-simplyfeu",
+  "documentation": "https://github.com/swazee619/ha_simplyfeu",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/VOTRE_UTILISATEUR/ha-simplyfeu/issues",
+  "issue_tracker": "https://github.com/swazee619/ha_simplyfeu/issues",
   "requirements": [],
-  "version": "0.1.0"
+  "version": "0.1.2"
 }
